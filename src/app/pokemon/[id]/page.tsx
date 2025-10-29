@@ -1,9 +1,11 @@
+// src/app/pokemon/[id]/page.tsx
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Heart, Ruler, Weight, Zap } from "lucide-react";
 import { TypeBadge } from "@/components/TypeBadge";
+import { EvolutionChain } from "@/components/EvolutionChain";
 import { pokeAPI, pokemonKeys } from "@/lib/api";
 import {
   formatPokemonId,

@@ -10,9 +10,11 @@ import {
 class PokeAPI {
   private static instance: PokeAPI;
   private client: PokemonClient;
+  private evolutionClient: EvolutionClient;
 
   private constructor() {
     this.client = new PokemonClient();
+    this.evolutionClient = new EvolutionClient();
   }
 
   public static getInstance(): PokeAPI {
@@ -42,9 +44,9 @@ class PokeAPI {
   }
 
   // 진화 체인
-  // async getEvolutionChain(id: number) {
-  //   return await this.client.getEvolutionChainById(id);
-  // }
+  async getEvolutionChain(id: number) {
+    return await this.evolutionClient.getEvolutionChainById(id);
+  }
 
   // 타입별 포켓몬
   async getPokemonByType(type: string) {
